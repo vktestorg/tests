@@ -11,3 +11,4 @@ jobs:
       issues: write
     with:
       username: vikramk20
+    secrets: inherit
