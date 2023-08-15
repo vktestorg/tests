@@ -5,16 +5,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    name: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Build
-        run: |
-          echo Hello, "$ORG"
-          if [ "$ORG" == "ORG" ]
-          then
-            echo "aaa"
-          fi
-        env:
-          ORG: ${{ secrets.ORG_TEST }}
+  call-workflow-A:
+    uses: vktestorg/test_worfklow/.github/workflows/main.yml@main
+    permissions:
+      issues: write
+    with:
+      username: vikramk20
