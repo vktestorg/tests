@@ -1,0 +1,20 @@
+name: labs-calling-deploymnet-workflow
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: |
+          echo Hello, "$ORG"
+          if [ "$ORG" == "ORG" ]
+          then
+            echo "aaa"
+          fi
+        env:
+          ORG: ${{ secrets.ORG_TEST }}
